@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { FC } from "react"
-import { ListDataType, ContextTodo } from "../utils/ContextTodo"
+import { ListDataType, ContextTodo } from "../utils/Todos/ContextTodo"
 
 interface Props {
     text: ListDataType

@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { useContext } from 'react'
 import { CheckCircleIcon as CheckIcon, MinusSmallIcon as UncompletedIcon } from '@heroicons/react/24/solid'
-import { ListDataType, ContextTodo } from '../utils/ContextTodo'
-import { UPDATE_TASK } from '../utils/handleTasks'
+import { ListDataType, ContextTodo } from '../utils/Todos/ContextTodo'
+import { UPDATE_TASK } from '../utils/Todos/handleTasks'
 
 interface Props {
     text: string,
