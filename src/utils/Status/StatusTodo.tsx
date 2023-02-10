@@ -25,3 +25,8 @@ const StatusProvider: FC<Props> = ({ children }) => {
         </StatusContext.Provider>
     )
 }
+
+export {
+    StatusProvider,
+    StatusContext,
+}

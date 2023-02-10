@@ -1,4 +1,4 @@
-import { PlusIcon } from '@heroicons/react/24/solid'
+import { PlusIcon, ArrowLeftOnRectangleIcon } from '@heroicons/react/24/solid'
 import { useRef, useContext } from 'react'
 import { ContextTodo, ListDataType } from '../utils/Todos/ContextTodo'
 import { ADD_TASK } from '../utils/Todos/handleTasks'
@@ -33,12 +33,20 @@ const Modal = () => {
                         </div>
                         <input ref={task_name} type="text" className='rounded-md border-solid border-2 text-2xl px-2 py-2 border-blue-200 focus-visible:outline-none' />
                     </div>
-                    <button className='rounded-md flex items-center text-2xl border-2 px-2 py-1 border-blue-200 hover:text-white hover:bg-blue-900' onClick={uploadTask}>
-                        <span>Add task</span>
-                        <div className='w-[1.3em]'>
-                            <PlusIcon />
-                        </div>
-                    </button>
+                    <div className='flex flex-col'>
+                        <button className='rounded-md flex items-center text-2xl border-2 px-2 py-1 border-blue-200 hover:text-white hover:bg-blue-900' onClick={uploadTask}>
+                            <span>Add task</span>
+                            <div className='w-[1.3em]'>
+                                <PlusIcon />
+                            </div>
+                        </button>
+                        <button className='rounded-md flex items-center text-2xl border-2 px-2 py-1 border-blue-200 hover:text-white hover:bg-blue-900'>
+                            <span>Leave</span>
+                            <div className='w-[1.3em]'>
+                                <ArrowLeftOnRectangleIcon />
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
