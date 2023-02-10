@@ -15,12 +15,12 @@ const StatusContext = createContext<StatusContextType>({
 })
 
 const StatusProvider: FC<Props> = ({ children }) => {
-    const [modalStatus, setModalStatus] = useState(false)
+    const [modalStatus, setModalStatus] = useState(true)
     const toggleModalStatus = () => {
         setModalStatus(!modalStatus)
     }
     return (
-        <StatusContext.Provider value={{ modalStatus: false, toggleModalStatus: toggleModalStatus }}>
+        <StatusContext.Provider value={{ modalStatus: modalStatus, toggleModalStatus: toggleModalStatus }}>
             {children}
         </StatusContext.Provider>
     )

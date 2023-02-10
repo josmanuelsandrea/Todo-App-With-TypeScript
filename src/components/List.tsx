@@ -3,9 +3,11 @@ import { ContextTodo } from '../utils/Todos/ContextTodo'
 import { useContext } from "react"
 import { InfinitySpin } from "react-loader-spinner"
 import { PlusCircleIcon } from "@heroicons/react/24/solid"
+import { StatusContext } from "../utils/Status/StatusTodo"
 
 const List = () => {
     const { active_list, loading, currentTasks } = useContext(ContextTodo)
+    const { toggleModalStatus } = useContext(StatusContext)
 
     return (
         <div className="flex flex-col w-full justify-center items-center flex-auto relative">
@@ -21,7 +23,7 @@ const List = () => {
                     })}
                 </div>
             </ul>
-            <div className="absolute right-5 bottom-5 w-[4em]">
+            <div className="absolute right-5 bottom-5 w-[4em]" onClick={toggleModalStatus}>
                 <PlusCircleIcon className="text-blue-900"/>
             </div>
         </div>
