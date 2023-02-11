@@ -7,7 +7,7 @@ export interface TaskType {
     uuid: string
 }
 
-interface TODO_TASKS_TYPE {
+export interface TODO_TASKS_TYPE {
     tasks: TaskType[]
 }
 

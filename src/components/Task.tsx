@@ -1,8 +1,8 @@
-import { FC } from 'react'
-import { useContext } from 'react'
-import { CheckCircleIcon as CheckIcon, MinusSmallIcon as UncompletedIcon } from '@heroicons/react/24/solid'
-import { ListDataType, ContextTodo } from '../utils/Todos/ContextTodo'
-import { UPDATE_TASK } from '../utils/Todos/handleTasks'
+import { FC, useRef } from 'react'
+import { ListDataType } from '../utils/Todos/ContextTodo'
+import CompletedIcons from './task-components/CompletedIcons'
+import Text from './task-components/Text'
+import DeleteButton from './task-components/DeleteButton'
 
 interface Props {
     text: string,
@@ -11,23 +11,12 @@ interface Props {
 }
 
 const Task: FC<Props> = ({ text, completed, uuid }) => {
-    const { setCurrentTask } = useContext(ContextTodo)
+    const task_container = useRef<HTMLDivElement>(document.createElement('div'))
     return (
-        <div 
-            className="flex text-3xl items-center" 
-            onClick={() => {
-                const NEW_TASKS = UPDATE_TASK(uuid)
-                setCurrentTask(NEW_TASKS.tasks)
-            }}
-        >
-            <div className='w-[1.2em] h-auto mr-3'>
-                {
-                    completed === ListDataType.Completed
-                    ? <CheckIcon className='text-blue-900'/> 
-                    : <UncompletedIcon className='text-red-700' />
-                }
-            </div>
-            <li className={`${completed === ListDataType.Completed && 'line-through text-gray-500'}`}>{text}</li>
+        <div className="flex text-3xl items-center transition-all duration-700" ref={task_container}>
+            <CompletedIcons completed={completed} />
+            <Text completed={completed} text={text} uuid={uuid} task_container={task_container} />
+            <DeleteButton uuid={uuid} task_container={task_container} />
         </div>
     )
 }
