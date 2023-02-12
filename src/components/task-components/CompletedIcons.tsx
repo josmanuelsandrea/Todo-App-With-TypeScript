@@ -11,8 +11,8 @@ const CompletedIcons: FC<Props> = ({ completed }) => {
         <div className='w-[1.2em] h-auto mr-3 flex items-center'>
             {
                 completed === ListDataType.Completed
-                    ? <CheckIcon className='text-blue-900' />
-                    : <UncompletedIcon className='text-red-700' />
+                    ? <CheckIcon className='text-blue-500' />
+                    : <UncompletedIcon className='text-red-500' />
             }
         </div>
     )

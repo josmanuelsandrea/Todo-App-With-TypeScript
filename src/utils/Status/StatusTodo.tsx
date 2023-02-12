@@ -15,7 +15,7 @@ const StatusContext = createContext<StatusContextType>({
 })
 
 const StatusProvider: FC<Props> = ({ children }) => {
-    const [modalStatus, setModalStatus] = useState(true)
+    const [modalStatus, setModalStatus] = useState(false)
     const toggleModalStatus = () => {
         setModalStatus(!modalStatus)
     }

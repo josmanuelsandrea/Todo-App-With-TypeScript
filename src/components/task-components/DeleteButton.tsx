@@ -23,7 +23,7 @@ const DeleteButton: FC<Props> = ({ uuid, task_container }) => {
             confirmButtonText: 'Delete it'
         }).then((result) => {
             if (result.isConfirmed) {
-                task_container.current.style.transform = 'translateX(-200%)'
+                task_container.current.style.transform = 'translateX(-100vw)'
                 setTimeout(async () => {
                     await Swal.fire('Deleted!', 'The task has been deleted', 'success')
                     const NEW_TASKS = DELETE_TASK(uuid)

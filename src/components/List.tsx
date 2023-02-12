@@ -12,11 +12,11 @@ const List = () => {
     const { toggleModalStatus } = useContext(StatusContext)
     const DELETE_ALL_FUNCTION = () => {
         Swal.fire({
-            title: 'Are you sure you wanna delete all the tasks?',
+            title: 'Are you sure you want to delete all the tasks?',
             text: "There's no way back!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: 'rgb(30 58 138)',
+            confirmButtonColor: 'rgb(59 130 246)',
             cancelButtonColor: 'rgb(185 28 28)',
             confirmButtonText: 'Delete it'
         }).then((result) => {
@@ -41,9 +41,9 @@ const List = () => {
                     })}
                 </div>
             </ul>
-            <div className="absolute right-5 bottom-5 w-[4em] flex flex-col">
+            <div className="fixed right-5 bottom-5 w-[4em] flex flex-col">
                 <XCircleIcon className="text-red-500 drop-shadow-sm" onClick={DELETE_ALL_FUNCTION}/>
-                <PlusCircleIcon className="text-blue-900 drop-shadow-sm" onClick={toggleModalStatus}/>
+                <PlusCircleIcon className="text-blue-500 drop-shadow-sm" onClick={toggleModalStatus}/>
             </div>
         </div>
     )
