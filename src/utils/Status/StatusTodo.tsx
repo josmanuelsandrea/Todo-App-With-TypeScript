@@ -2,7 +2,9 @@ import { FC, ReactNode, createContext, useState } from "react"
 
 interface StatusContextType {
     modalStatus: boolean,
-    toggleModalStatus: () => void
+    searchStatus: boolean,
+    toggleSearchStatus: () => void,
+    toggleModalStatus: () => void,
 }
 
 interface Props {
@@ -11,16 +13,25 @@ interface Props {
 
 const StatusContext = createContext<StatusContextType>({ 
     modalStatus: false,
+    searchStatus: false,
+    toggleSearchStatus: () => {},
     toggleModalStatus: () => {}
 })
 
 const StatusProvider: FC<Props> = ({ children }) => {
-    const [modalStatus, setModalStatus] = useState(false)
+    const [searchStatus, setSearchStatus] = useState<boolean>(false)
+    const [modalStatus, setModalStatus] = useState<boolean>(false)
+
+    const toggleSearchStatus = () => {
+        setSearchStatus(!searchStatus)
+    }
+
     const toggleModalStatus = () => {
         setModalStatus(!modalStatus)
     }
+
     return (
-        <StatusContext.Provider value={{ modalStatus: modalStatus, toggleModalStatus: toggleModalStatus }}>
+        <StatusContext.Provider value={{ modalStatus: modalStatus, toggleModalStatus: toggleModalStatus, searchStatus: searchStatus, toggleSearchStatus: toggleSearchStatus }}>
             {children}
         </StatusContext.Provider>
     )

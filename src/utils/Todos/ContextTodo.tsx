@@ -26,7 +26,7 @@ const ContextTodo = createContext<ContextType>({
     loading: false,
 })
 
-const ContextProvider: FC<Props> = ({ children }) => {
+const TodoProvider: FC<Props> = ({ children }) => {
     const [activeList, setActiveList] = useState<ListDataType>(ListDataType.Completed)
     const [currentTasks, setCurrentTasks] = useState<TaskType[]>([])
     const [loading, setLoading] = useState<boolean>(false)
@@ -55,5 +55,5 @@ const ContextProvider: FC<Props> = ({ children }) => {
 export {
     ListDataType,
     ContextTodo,
-    ContextProvider
+    TodoProvider
 }
