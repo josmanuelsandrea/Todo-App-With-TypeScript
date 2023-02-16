@@ -4,6 +4,7 @@ import { TaskType, checkStorage } from "./checkStorage"
 enum ListDataType {
     Completed = 'Completed',
     Uncompleted = 'Uncompleted',
+    Global = 'Global'
 }
 
 interface ContextType {

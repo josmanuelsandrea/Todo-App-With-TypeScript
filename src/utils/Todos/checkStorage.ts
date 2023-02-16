@@ -3,7 +3,7 @@ import { ListDataType } from "./ContextTodo"
 
 export interface TaskType {
     name: string,
-    completed: ListDataType
+    status: ListDataType
     uuid: string
 }
 

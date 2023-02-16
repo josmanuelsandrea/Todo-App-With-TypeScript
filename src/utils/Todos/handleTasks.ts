@@ -31,7 +31,7 @@ export const UPDATE_TASK = (task_id: string) => {
 
     if (INDEX_TASK > -1){ // if there's index
         CURRENT_TASKS.tasks.splice(INDEX_TASK, 1) // remove that TASK from the array
-        let UPDATED_TASK = {...SELECTED_TASK, completed: SELECTED_TASK.completed === ListDataType.Completed ? ListDataType.Uncompleted : ListDataType.Completed } as TaskType // Set the opposite of completed or uncompleted
+        let UPDATED_TASK = {...SELECTED_TASK, status: SELECTED_TASK.status === ListDataType.Completed ? ListDataType.Uncompleted : ListDataType.Completed } as TaskType // Set the opposite of completed or uncompleted
         CURRENT_TASKS.tasks.push(UPDATED_TASK) // add the TASK to the array.
     }
 

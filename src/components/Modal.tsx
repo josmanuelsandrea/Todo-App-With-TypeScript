@@ -23,7 +23,7 @@ const Modal = () => {
 
         const TASK: TaskType = {
             name: task_name.current.value,
-            completed: ListDataType.Uncompleted, // this is the default status for new tasks
+            status: ListDataType.Uncompleted, // this is the default status for new tasks
             uuid: uuidv4()
         }
 

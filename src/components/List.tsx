@@ -1,5 +1,5 @@
 import Task from "./Task"
-import { ContextTodo } from '../utils/Todos/ContextTodo'
+import { ContextTodo, ListDataType } from '../utils/Todos/ContextTodo'
 import { useContext } from "react"
 import { InfinitySpin } from "react-loader-spinner"
 import { PlusCircleIcon, XCircleIcon } from "@heroicons/react/24/solid"
@@ -33,8 +33,12 @@ const List = () => {
                 <div>
                     {loading && <InfinitySpin color="#1E3A8A"/>}
                     {!loading && currentTasks.map(task => {
-                        if (task.completed === active_list) {
-                            return <Task text={task.name} completed={task.completed} key={task.uuid} uuid={task.uuid} />
+                        if (active_list === ListDataType.Global){
+                            return <Task text={task.name} completed={task.status} key={task.uuid} uuid={task.uuid} />
+                        }
+                        
+                        if (task.status === active_list) {
+                            return <Task text={task.name} completed={task.status} key={task.uuid} uuid={task.uuid} />
                         }
 
                         return null

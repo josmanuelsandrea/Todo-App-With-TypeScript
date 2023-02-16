@@ -17,9 +17,9 @@ const ListMaster = () => {
                         <NavigationText related_data_type={ListDataType.Uncompleted} />
                     </>
                 }
-                {/* {searchStatus &&
-                    <NavigationText related_data_type={} />
-                } */}
+                {searchStatus &&
+                    <NavigationText related_data_type={ListDataType.Global} />
+                }
             </div>
             <List />
             <Modal />
