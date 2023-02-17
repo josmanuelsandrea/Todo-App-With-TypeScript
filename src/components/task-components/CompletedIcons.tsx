@@ -8,7 +8,7 @@ interface Props {
 
 const CompletedIcons: FC<Props> = ({ completed }) => {
     return (
-        <div className='w-[1.2em] h-auto mr-3 flex items-center'>
+        <div className='w-[1em] h-auto mr-3 flex items-center'>
             {
                 completed === ListDataType.Completed
                     ? <CheckIcon className='text-blue-500' />

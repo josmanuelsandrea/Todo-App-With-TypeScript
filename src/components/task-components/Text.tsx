@@ -16,7 +16,7 @@ const Text: FC<Props> = ({ completed, uuid, text, task_container }) => {
 
     return (
         <li
-            className={`${completed === ListDataType.Completed && 'line-through text-gray-500'}`}
+            className={`${completed === ListDataType.Completed && 'line-through text-gray-500'} text-xl md:text-4xl`}
             onClick={() => {
                 task_container.current.style.transform = 'scale(0)'
                 task_container.current.style.textDecoration = 'line-through'

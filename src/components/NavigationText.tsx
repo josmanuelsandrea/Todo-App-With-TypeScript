@@ -25,11 +25,11 @@ const NavigationText: FC<Props> = ({ related_data_type }) => {
 
     return (
         <p 
-            className={`text-2xl border-solid border-b-2 flex items-center ${active_list === related_data_type ? 'border-blue-500' : 'border-transparent'} pb-2 hover:border-blue-500 cursor-pointer transition-all`}
+            className={`text-2xl border-solid border-b-2 md:text-3xl flex items-center ${active_list === related_data_type ? 'border-blue-500' : 'border-transparent'} pb-2 hover:border-blue-500 cursor-pointer transition-all`}
             onClick={() => { setActiveList(related_data_type) }}
         >
             {related_data_type === ListDataType.Global ? 'All' : related_data_type }
-            <span className='rounded-full py-0 px-2 bg-blue-500 text-white ml-3 text-base'>{taskLength}</span>
+            <span className={`rounded-full py-0 px-2 ${taskLength > 0 ? 'bg-blue-500' : 'bg-red-500'} text-white ml-1 text-sm md:text-base`}>{taskLength}</span>
         </p>
     )
 }

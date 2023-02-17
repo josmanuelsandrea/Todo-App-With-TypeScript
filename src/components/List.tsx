@@ -43,11 +43,12 @@ const List = () => {
 
                         return null
                     })}
+                    {currentTasks.length < 1 && <p className="text-blue-500 text-4xl underline underline-offset-8">No tasks yet!</p>}
                 </div>
             </ul>
-            <div className="fixed right-5 bottom-5 w-[4em] flex flex-col">
-                <XCircleIcon className="text-red-500 drop-shadow-sm" onClick={DELETE_ALL_FUNCTION}/>
-                <PlusCircleIcon className="text-blue-500 drop-shadow-sm" onClick={toggleModalStatus}/>
+            <div className="fixed right-5 bottom-5 w-[4em] flex flex-col md:w-[5em] md:right-7 md:bottom-7">
+                <XCircleIcon className="text-red-500 drop-shadow-sm transition-all duration-700 hover:rotate-90" onClick={DELETE_ALL_FUNCTION}/>
+                <PlusCircleIcon className="text-blue-500 drop-shadow-sm transition-all duration-700 hover:rotate-180" onClick={toggleModalStatus}/>
             </div>
         </div>
     )
